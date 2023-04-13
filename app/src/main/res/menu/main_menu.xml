@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_page"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_call_me"
+            android:title="Call Me Back"
+            android:icon="@drawable/call_back"/>
+
+        <item
+            android:id="@+id/nav_pocket_mode"
+            android:title="Pocket Mode"
+            android:icon="@drawable/pocket"/>
+
+        <item
+            android:id="@+id/nav_sos"
+            android:title="SOS Setting"
+            android:icon="@drawable/settings2"/>
+
+        <item
+            android:id="@+id/nav_charging_mode"
+            android:title="Charging Mode"
+            android:icon="@drawable/charge"/>
+
+        <item
+            android:id="@+id/nav_remote_lock"
+            android:title="Remote Lock"
+            android:icon="@drawable/lock"/>
+
+        <item android:title="Setting">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_setting"
+                        android:icon="@drawable/settings"
+                        android:title="Setting"/>
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>
