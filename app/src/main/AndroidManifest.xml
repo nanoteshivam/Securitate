@@ -14,11 +14,12 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.c2dm.permission.Reciever" />
     <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/securitate_icon"
+        android:icon="@drawable/second"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/securitate_icon"
         android:supportsRtl="true"
@@ -26,8 +27,6 @@
         <activity
             android:name=".Safety_Tutorials"
             android:exported="false" />
-        <activity android:name=".RemoteLock" />
-        <activity android:name=".ChargingAlert" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -52,21 +51,6 @@
             </intent-filter>
         </receiver> <!-- Charge Receiver -->
         <receiver
-            android:name=".ChargeReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".RemoteLockReceiver"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            </intent-filter>
-        </receiver>
-        <receiver
             android:name=".DeviceAdmin"
             android:exported="true"
             android:label="@string/app_name"
@@ -89,7 +73,6 @@
                 <action android:name="com.google.android.c2dm.intent.Recieve" />
             </intent-filter>
         </service>
-        <service android:name=".ChargeService" />
     </application>
 
 </manifest>

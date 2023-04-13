@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -56,9 +57,9 @@ import static com.example.myapplication.Constants.TOPIC;
 public class Home_page extends AppCompatActivity {
 
     SliderView sliderView;
-    int[] images = {R.drawable.one,
-    R.drawable.two,
-    R.drawable.three,
+    int[] images = {R.drawable.six,
+    R.drawable.seven,
+    R.drawable.five,
         R.drawable.four};
 
     ImageButton imageButton1, callMeBackButton, sosSettingsButton, chargeSafetyButton, findMyPhoneButton,settingBtn;
@@ -87,9 +88,8 @@ public class Home_page extends AppCompatActivity {
         imageButton1=findViewById(R.id.pocket_mode_id);
         callMeBackButton = findViewById(R.id.callMeBackId);
         sosSettingsButton = findViewById(R.id.sosSettings);
-        chargeSafetyButton = findViewById(R.id.chargeSafety);
-        findMyPhoneButton = findViewById(R.id.findMyPhone);
-        settingBtn = findViewById(R.id.setting);
+
+        settingBtn = findViewById(R.id.Safety_Tutorials);
 
         // Asking all permissions at a time
         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.SEND_SMS)
@@ -150,23 +150,24 @@ public class Home_page extends AppCompatActivity {
             }
         });
 
-        /**Charging safety settings button*/
-        chargeSafetyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Home_page.this, ChargingAlert.class);
-                startActivity(intent);
-            }
-        });
 
-        /**Find My Phone setting button*/
-        findMyPhoneButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Home_page.this, RemoteLock.class);
-                startActivity(intent);
-            }
-        });
+//        /**Charging safety settings button*/
+//        chargeSafetyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Home_page.this, ChargingAlert.class);
+//                startActivity(intent);
+//            }
+//        });
+
+//        /**Find My Phone setting button*/
+//        findMyPhoneButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Home_page.this, RemoteLock.class);
+//                startActivity(intent);
+//            }
+//        });
 
         /**setting button*/
         settingBtn.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +200,11 @@ public class Home_page extends AppCompatActivity {
         sosBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                Intent callIntent = new Intent(Intent.ACTION_CALL);
+//                callIntent.setData(Uri.parse("tel:6300458151"));
+//                startActivity(callIntent);
+
                 if (checkSelfPermission(INTERNET)
                         != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{INTERNET}, 1000);
@@ -206,11 +212,25 @@ public class Home_page extends AppCompatActivity {
 
                 // Step 1 : Getting Current Location
                 getCurrentLocation();
+
+                //String phno="6300458151";
+
+
             }
         });
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
     }
+
+//    ((Button)findViewById(R.id.button1)).setOnClickListener(new OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            String phno="10digits";
+//
+//            Intent i=new Intent(Intent.ACTION_DIAL,Uri.parse(phno));
+//            startActivity(i);
+//        }
+//    });
 
     private void sendSms(String mLatitude, String mLongitude) {
 

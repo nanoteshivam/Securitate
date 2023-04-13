@@ -19,6 +19,7 @@
             android:id="@+id/code_name"
             android:text="COde NAme"
             android:textSize="22sp"
+            android:textStyle="bold"
             android:padding="16dp"
             android:textColor="@color/black"
             />

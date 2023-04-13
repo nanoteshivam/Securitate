@@ -60,6 +60,10 @@ public class SosActivity extends AppCompatActivity {
         // Creating object of our custom adapter class
         contactAdapter = new ContactSOSAdapter(SosActivity.this, db.readSosContact());
 
+
+
+
+
         addContactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
