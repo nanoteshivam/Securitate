@@ -103,12 +103,12 @@ public class SosActivity extends AppCompatActivity {
                             
 //Problem: When adding a contact, there’s no validation for an empty name or incorrect phone number.
   Fix: Add basic validation before inserting the contact.//
-
-  if (Cname.isEmpty() || Cnumber.isEmpty()) {
+ if (Cname.isEmpty() || Cnumber.isEmpty()) {
     Toast.makeText(SosActivity.this, "Please enter valid contact details", Toast.LENGTH_SHORT).show();
     return;
 }
 
+ 
                             // Creating object of contact
                             Contact contact1 = new Contact(Cname, Cnumber);
 
